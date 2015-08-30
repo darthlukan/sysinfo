@@ -10,6 +10,13 @@
 > bar's config.  The script does not have a timer, it leaves that up to the calling handler.
 
 
+## Screenshot
+
+> Here's an example of sysinfo.py running as the status_command in i3's bar:
+
+![i3bar example](example_i3bar.png)
+
+
 ## Dependencies
 
 > The only external dependency is [psutil](https://github.com/giampaolo/psutil)
