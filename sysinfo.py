@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import os
+import sys
 import psutil
 import argparse
 from datetime import datetime
@@ -70,20 +71,23 @@ def main():
 
     info_str = ''
 
-    if args.disks:
-        info_str += '{0} | '.format(disks(args.disks))
+    if len(sys.argv) > 1:
+        if args.disks:
+            info_str += '{0} | '.format(disks(args.disks))
 
-    if args.cpu:
-        info_str += '{0} | '.format(cpu())
+        if args.cpu:
+            info_str += '{0} | '.format(cpu())
 
-    if args.mem:
-        info_str += '{0} | '.format(mem())
+        if args.mem:
+            info_str += '{0} | '.format(mem())
 
-    if args.load:
-        info_str += '{0} | '.format(load())
+        if args.load:
+            info_str += '{0} | '.format(load())
 
-    # Since we're supplying a default, we should always inject date_time
-    info_str += '{0} |'.format(date_time(args.date_time))
+        # Since we're supplying a default, we should always inject date_time
+        info_str += '{0} |'.format(date_time(args.date_time))
+    else:
+        parser.print_help()
 
     return info_str
 
