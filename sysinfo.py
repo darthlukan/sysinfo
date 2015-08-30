@@ -47,7 +47,13 @@ def disks(data):
 
 def date_time(format_str):
     if isinstance(format_str, str) and format_str != '':
-        return datetime.today().strftime(format_str)
+        try:
+            return datetime.today().strftime(format_str)
+        # This doesn't feel right.
+        # TODO: Read through strftime source to find the possible exceptions and
+        # handle them appropriately.
+        except Exception:
+            pass
 
     return datetime.today().strftime('%Y-%m-%d %H:%M:%S')
 
