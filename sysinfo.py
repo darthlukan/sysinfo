@@ -46,7 +46,6 @@ def disks(data):
 
 
 def date_time(format_str):
-    print(format_str)
     if isinstance(format_str, str) and format_str != '':
         return datetime.today().strftime(format_str)
 
