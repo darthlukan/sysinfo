@@ -38,7 +38,7 @@ def disks(data):
 
     for mountpoint in data:
         usage = psutil.disk_usage(mountpoint)
-        disks_string += '{0}: '.format(mountpoint)
+        disks_string += ' | {0}: '.format(mountpoint)
         disks_string += '{0:.2f}/{1:.2f}GB '.format(
             convert_bytes(usage.used), convert_bytes(usage.total))
 
