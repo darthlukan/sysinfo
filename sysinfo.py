@@ -34,7 +34,7 @@ def cpu():
 
 
 def disks(data):
-    disks_string = 'DISKS( '
+    disks_string = ''
 
     for mountpoint in data:
         usage = psutil.disk_usage(mountpoint)
@@ -42,7 +42,6 @@ def disks(data):
         disks_string += '{0:.2f}/{1:.2f}GB '.format(
             convert_bytes(usage.used), convert_bytes(usage.total))
 
-    disks_string += ')'
     return disks_string
 
 
