@@ -56,7 +56,7 @@ def date_time(format_str):
 def music():
     mpc = subprocess.Popen(['mpc current'], stdout=subprocess.PIPE, shell=True)
     stdout, stderr = mpc.communicate()
-    return 'SONG: {0}'.format(stdout.strip())
+    return 'SONG: {0}'.format(stdout.decode('utf-8').strip())
 
 
 def main():
